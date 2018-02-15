@@ -1,0 +1,16 @@
+<h1> Add a recipe!</h1>
+
+<%= form_for @recipe do |f| %>
+  <%=f.label :name, "Name" %>
+  <%=f.text_field :name %>
+  <br>
+  <%=f.label :instructions, "Instructions" %>
+  <%=f.text_area :instructions %>
+  <br>
+  <%=f.label :cooktime, "Cook Time" %>
+  <%=f.text_field :cooktime %>
+  <br>
+  <%=f.label :ingredients, "Ingredients"%>
+  <%=f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name%>
+
+<%end%>
