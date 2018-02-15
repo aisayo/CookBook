@@ -2,9 +2,11 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
-    @recipe.ingredients.build
   end
 
+  def index
+    @recipes = Recipe.all
+  end 
 
   def create
     @recipe = Recipe.new(recipe_params)
