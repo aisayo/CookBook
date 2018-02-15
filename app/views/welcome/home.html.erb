@@ -1,1 +1,6 @@
-You Made it Home!
+<h1> Welcome to your CookBook!</h1>
+
+  <% if !user_signed_in? %>
+    <%=link_to "Sign Up", new_user_registration_path %>
+    <%=link_to "Sign In", user_session_path %>
+  <%end%>
