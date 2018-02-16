@@ -2,6 +2,7 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
+    @ingredient = Ingredient.new
   end
 
   def index
@@ -29,7 +30,7 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name, :instructions, :cooktime)
+    params.require(:recipe).permit(:name, :instructions, :cooktime, :ingredients_ids => [], ingredients_attributes: [:name])
   end
 
 end

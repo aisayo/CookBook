@@ -7,6 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Ingredient.create(
-    name: "Chicken",
-    quantity: 2
+    name: "Chicken"
 )

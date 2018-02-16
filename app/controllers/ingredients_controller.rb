@@ -1,4 +1,4 @@
-class ingredientsController < ApplicationController
+class IngredientsController < ApplicationController
 
   def new
     @ingredient = Ingredient.new
@@ -7,7 +7,7 @@ class ingredientsController < ApplicationController
   def create
     @ingredient = Ingredient.new(ingredients_params)
     if @ingredient.save
-      render ingredient_path(@ingredient)
+      render new_recipe_path
     else
       render :new
     end
@@ -20,8 +20,8 @@ class ingredientsController < ApplicationController
 
   private
   def ingredients_params
-    params.require(:ngredient).permit(:name, :quantity)
-  end 
+    params.require(:ingredient).permit(:name)
+  end
 
 
 

@@ -10,18 +10,19 @@
   <%=f.label :cooktime, "Cook Time" %>
   <%=f.text_field :cooktime %>
   <br>
+  <%= f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name %>
+
+  <h1>Need to add more ingredients?</h1>
+    <h1>Do so below</h1>
   <h1> Add Ingredients</h1>
   <% 3.times do %>
     <%= f.fields_for :ingredients do |ingredient_fields| %>
     <br>
        <%= ingredient_fields.label :name, "Ingredient" %>
-       
        <%= ingredient_fields.text_field :name %>
     <% end %>
   <%end%>
-
-
-  <%#=f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name%>
+  <br>
   <%=f.submit%>
 
 <%end%>
