@@ -6,4 +6,5 @@
   <%else%>
     <h1> Welcome <%=current_user.email%>!</h1>
     <%=link_to "View Recipes", recipes_path %>
+    <%=link_to "Add A Recipe", new_recipe_path %>
   <%end%>

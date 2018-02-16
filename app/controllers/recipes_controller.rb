@@ -6,19 +6,24 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = Recipe.all
-  end 
+  end
 
   def create
     @recipe = Recipe.new(recipe_params)
-    if @recipe.save
-      redirect_to recipe_path(@recipe)
+    if @recipe.user = current_user
+      if @recipe.save
+        redirect_to recipe_path(@recipe)
+      else
+        render :new
+      end
     else
-      render :new
+      redirect_to root_path
     end
   end
 
   def show
     @recipe = Recipe.find(params[:id])
+    @ingredients = @recipe.ingredients
   end
 
   private

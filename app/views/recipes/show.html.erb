@@ -4,4 +4,6 @@
 <br>
 <%=@recipe.cooktime%>
 <br>
-<%=@recipe.ingredients.name%>
+<% @ingredients.each do |ingredient|%>
+  <%=ingredient.name %>
+<%end%>
