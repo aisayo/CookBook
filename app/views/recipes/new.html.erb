@@ -16,7 +16,7 @@
     <h1>Do so below</h1>
   <h1> Add Ingredients</h1>
   <% 3.times do %>
-    <%= f.fields_for :ingredients do |ingredient_fields| %>
+    <%= f.fields_for :ingredients, @ingredient do |ingredient_fields| %>
     <br>
        <%= ingredient_fields.label :name, "Ingredient" %>
        <%= ingredient_fields.text_field :name %>

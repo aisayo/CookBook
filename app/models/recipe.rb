@@ -4,10 +4,11 @@ class Recipe < ApplicationRecord
   has_many :ingredients, through: :recipe_ingredients
 
 
-  def items_attributes=(item_attributes)
-    item_attributes.values.each do |ingredient_attribute|
-      if !item_attribute.empty?
-        new_ingredient = Item.find_or_create_by(item_attribute)
+  def ingredients_attributes=(ingredients_attributes)
+    binding.pry
+    ingredients_attributes.values.each do |ingredients_attribute|
+      if !ingredients_attribute.empty?
+        new_ingredient = Ingredient.find_or_create_by(ingredients_attribute)
         self.ingredients << new_ingredient
       end
     end
