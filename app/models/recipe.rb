@@ -5,7 +5,6 @@ class Recipe < ApplicationRecord
 
 
   def ingredients_attributes=(ingredients_attributes)
-    binding.pry
     ingredients_attributes.values.each do |ingredients_attribute|
       if !ingredients_attribute.empty?
         new_ingredient = Ingredient.find_or_create_by(ingredients_attribute)
