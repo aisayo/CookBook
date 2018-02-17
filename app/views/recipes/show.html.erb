@@ -1,9 +1,11 @@
 <h1> Recipe for <%=@recipe.name%></h1>
 
-<%=@recipe.instructions%>
-<br>
-<%=@recipe.cooktime%>
-<br>
+<h4>Recipe Instructions: <%=@recipe.instructions%></h4>
+<h4>Cook Time: <%=@recipe.cooktime%></h4>
+</ul>
+<h4> Ingredients: </h4>
+
 <% @ingredients.each do |ingredient|%>
-  <%=ingredient.name %>
+  <li><%=ingredient.name %></li>
 <%end%>
+</ul>
