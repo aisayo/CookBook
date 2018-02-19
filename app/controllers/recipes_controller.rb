@@ -2,7 +2,9 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
-    @ingredient = Ingredient.new
+    3.times do
+      ingredient = @recipe.ingredients.build
+    end
   end
 
   def index
@@ -48,7 +50,7 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name, :instructions, :cooktime, :ingredient_ids => [], ingredients_attributes: [:name])
+    params.require(:recipe).permit(:name, :instructions, :cooktime, :ingredient_ids => [], ingredients_attributes: [:id, :name])
   end
 
 end

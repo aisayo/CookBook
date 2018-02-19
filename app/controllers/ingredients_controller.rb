@@ -1,12 +1,15 @@
 class IngredientsController < ApplicationController
 
+  def new
+    if params[:recipe_id] && !Recipe.exists?(params[:recipe_id])
+      redirect_to recieps_path, alert: "Recipe not found."
+    else
+      @ingredient = Ingredient.new(recipe_id: params[:recipe_id])
+    end
+  end
 
   def index
-    if params[:recipe_id]
-      @ingredients = Recipe.find(params[:recipe_id]).ingredients
-    else
       @ingredients = Ingredient.all
-    end 
   end
 
   def show
@@ -22,7 +25,7 @@ class IngredientsController < ApplicationController
 
   private
   def ingredients_params
-    params.require(:ingredient).permit(:name)
+    params.require(:ingredient).permit(:name, :recipe_id)
   end
 
 

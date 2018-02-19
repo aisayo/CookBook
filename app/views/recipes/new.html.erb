@@ -38,7 +38,6 @@
   <h1>Need to add more ingredients?</h1>
     <h1>Do so below</h1>
   <h1> Add Ingredients</h1>
-  <% 3.times do %>
     <%= f.fields_for :ingredients, @ingredient do |ingredient_fields| %>
     <br>
     <div class = >
@@ -46,7 +45,6 @@
        <%= ingredient_fields.text_field :name %>
     <% end %>
   </div>
-  <%end%>
   <br>
   <div class = "actions">
   <%=f.submit%>

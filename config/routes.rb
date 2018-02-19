@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'welcome#home'
 
   resources :recipes do
-    resources :ingredients, only: [:show, :index, :destroy]
+    resources :ingredients, only: [:show, :index, :destroy, :new]
   end
 
   resources :ingredients, only: [:show, :index, :destroy]
