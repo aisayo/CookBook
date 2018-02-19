@@ -1,4 +1,4 @@
-<h1> Add a recipe!</h1>
+<h1> Edit your recipe!</h1>
 
 <%= form_for @recipe do |f| %>
   <%=f.label :name, "Name" %>
@@ -12,16 +12,7 @@
   <br>
   <%= f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name %>
 
-  <h1>Need to add more ingredients?</h1>
-    <h1>Do so below</h1>
-  <h1> Add Ingredients</h1>
-  <% 3.times do %>
-    <%= f.fields_for :ingredients, @ingredient do |ingredient_fields| %>
-    <br>
-       <%= ingredient_fields.label :name, "Ingredient" %>
-       <%= ingredient_fields.text_field :name %>
-    <% end %>
-  <%end%>
-  <br>
+
   <%=f.submit%>
+
 <%end%>
