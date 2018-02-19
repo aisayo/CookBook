@@ -9,7 +9,10 @@
   <li><%=ingredient.name %></li>
 <%end%>
 </ul>
-
+<br>
 <%=link_to "Delete Recipe", recipe_path(@recipe), :method => "delete" %>
+<br>
 <%=link_to "Edit Recipe", edit_recipe_path(@recipe) %>
+<br>
 <%=link_to "All Recipes", recipes_path %>
+<br>
