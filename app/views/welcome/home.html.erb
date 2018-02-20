@@ -9,9 +9,9 @@
   <%else%>
     <h1> Welcome <%=current_user.email%>!</h1>
 
-    <%=link_to "View Recipes", recipes_path %>
+    <%=link_to "View Recipes", user_recipes_path(current_user)%>
     <br>
-    <%=link_to "Add A Recipe", new_recipe_path %>
+    <%=link_to "Add A Recipe", new_user_recipe_path(current_user) %>
     <br>
     <%=link_to "View Ingredients", ingredients_path %>
     <br>
