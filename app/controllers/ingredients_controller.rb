@@ -1,4 +1,5 @@
 class IngredientsController < ApplicationController
+  before_action :authenticate_user!
 
   def index
       @ingredients = Ingredient.all
@@ -6,6 +7,7 @@ class IngredientsController < ApplicationController
 
   def show
     @ingredient = Ingredient.find(params[:id])
+    @recipe = Recipe.find_by(id: params[:recipe_id])
   end
 
   def destroy

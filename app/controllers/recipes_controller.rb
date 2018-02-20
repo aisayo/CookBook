@@ -1,4 +1,5 @@
 class RecipesController < ApplicationController
+  before_action :authenticate_user!
 
   def new
     @recipe = Recipe.new
@@ -8,25 +9,21 @@ class RecipesController < ApplicationController
   end
 
   def index
-    @recipes = Recipe.all
+    @recipes = current_user.recipes
   end
 
   def create
-    @recipe = Recipe.new(recipe_params)
-    if @recipe.user = current_user
-      if @recipe.save
-        redirect_to user_recipe_path(@recipe)
-      else
-        render :new
-      end
-    else
-      redirect_to root_path
-    end
+    @recipe = current_user.recipes.new(recipe_params)
+        if @recipe.save
+          redirect_to recipe_path(@recipe)
+        else
+          render :new
+        end
   end
 
   def show
-    @recipe = Recipe.find(params[:id])
-    @ingredients = @recipe.ingredients
+      @recipe = Recipe.find(params[:id])
+      @ingredients = @recipe.ingredients
   end
 
   def edit
@@ -45,7 +42,7 @@ class RecipesController < ApplicationController
   def destroy
     @recipe = Recipe.find(params[:id])
     @recipe.delete
-    redirect_to user_recipes_path
+    redirect_to recipes_path
   end
   private
 
