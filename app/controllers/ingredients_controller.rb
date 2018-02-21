@@ -16,12 +16,17 @@ class IngredientsController < ApplicationController
 
   def create
     @ingredient = @recipe.ingredients.create(ingredients_params)
+    if @ingredient.save
+      redirect_to recipe_ingredients_path(@recipe, @ingredients)
+    else
+      render :new
+    end
   end
 
   def destroy
     @ingredient = Ingredient.find(params[:id])
     @ingredient.delete
-    redirect_to ingredients_path
+    redirect_to recipe_ingredients_path(@recipe, @ingredients)
   end
 
 
