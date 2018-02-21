@@ -4,7 +4,7 @@ class Recipe < ApplicationRecord
   has_many :ingredients, through: :recipe_ingredients
 
   validates :name, presence: true
-  validates :instructions, length: {minimum: 50}
+  validates :instructions, length: {minimum: 5}
   validates :cooktime, presence: true
 
 

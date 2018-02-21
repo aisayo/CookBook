@@ -2,6 +2,6 @@
 
 <ul>
 <% @ingredients.each do |ingredient| %>
-  <li><%=link_to ingredient.name, ingredient_path(ingredient) %> - <%=link_to "Delete Ingredient", ingredient_path(ingredient), :method => "delete" %></li>
+  <li><%=link_to ingredient.name, recipe_ingredient_path(@recipe, ingredient) %> - <%=link_to "Delete Ingredient", recipe_ingredient_path(@recipe, ingredient), :method => "delete" %></li>
 <%end%>
 </ul>

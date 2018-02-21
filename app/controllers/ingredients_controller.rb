@@ -1,13 +1,13 @@
 class IngredientsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_recipe
+  before_action :set_ingredient, only: [:show, :edit, :update, :destroy]
 
   def index
-      @ingredients = Ingredient.all
+    @ingredients = @recipe.ingredients.all
   end
 
   def show
-    @ingredient = Ingredient.find(params[:id])
-    @recipe = Recipe.find_by(id: params[:recipe_id])
   end
 
   def destroy
@@ -19,6 +19,14 @@ class IngredientsController < ApplicationController
 
   private
   def ingredients_params
-    params.require(:ingredient).permit(:name)
+    params.require(:ingredient).permit(:name, :recipe_id)
+  end
+
+  def set_recipe
+    @recipe = Recipe.find(params[:recipe_id])
+  end
+
+  def set_ingredient
+    @ingredient = Ingredient.find(params[:id])
   end
 end
