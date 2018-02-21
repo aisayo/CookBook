@@ -10,6 +10,14 @@ class IngredientsController < ApplicationController
   def show
   end
 
+  def new
+    @ingredient = @recipe.ingredients.new
+  end
+
+  def create
+    @ingredient = @recipe.ingredients.create(ingredients_params)
+  end
+
   def destroy
     @ingredient = Ingredient.find(params[:id])
     @ingredient.delete
