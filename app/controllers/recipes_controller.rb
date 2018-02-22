@@ -3,7 +3,7 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
-    3.times do
+    8.times do
       ingredient = @recipe.ingredients.build
     end
   end
@@ -31,6 +31,7 @@ class RecipesController < ApplicationController
   end
 
   def update
+
     @recipe = Recipe.find(params[:id])
       if @recipe.update(recipe_params)
         redirect_to @recipe

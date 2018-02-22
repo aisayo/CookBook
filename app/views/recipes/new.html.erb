@@ -15,8 +15,6 @@
   </div>
 <% end %>
 
-
-
   <div class = "field_with_errors" >
     <%=f.label :name, "Name" %>
     <%=f.text_field :name %>
@@ -35,8 +33,7 @@
   <div class = "field_with_errors">
     <%#= f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name %>
   </div>
-  <h1>Need to add more ingredients?</h1>
-    <h1>Do so below</h1>
+
   <h1> Add Ingredients</h1>
     <%= f.fields_for :ingredients, @ingredient do |ingredient_fields| %>
     <br>

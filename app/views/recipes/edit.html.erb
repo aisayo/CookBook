@@ -10,7 +10,7 @@
   <%=f.label :cooktime, "Cook Time" %>
   <%=f.text_field :cooktime %>
   <br>
-  <%= f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name %>
+  <%#= f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name %>
 
   <%= f.fields_for :ingredients, @ingredient do |ingredient_fields| %>
   <br>
