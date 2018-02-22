@@ -9,7 +9,7 @@ class RecipesController < ApplicationController
   end
 
   def index
-    @recipes = current_user.recipes
+    @recipes = current_user.recipes.alphabetical
   end
 
   def create
@@ -23,7 +23,7 @@ class RecipesController < ApplicationController
 
   def show
       @recipe = Recipe.find(params[:id])
-      @ingredients = @recipe.ingredients
+      @ingredients = @recipe.ingredients.alphabetical
   end
 
   def edit

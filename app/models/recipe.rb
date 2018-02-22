@@ -7,6 +7,11 @@ class Recipe < ApplicationRecord
   validates :instructions, length: {minimum: 5}
   validates :cooktime, presence: true
 
+  def self.alphabetical
+      self.order(name: :asc)
+  end
+
+
 
   def ingredients_attributes=(ingredients_attributes)
     ingredients_attributes.values.each do |ingredients_attribute|
@@ -16,5 +21,4 @@ class Recipe < ApplicationRecord
       end
     end
   end
-
 end
