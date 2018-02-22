@@ -15,7 +15,7 @@ class Recipe < ApplicationRecord
 
   def ingredients_attributes=(ingredients_attributes)
     ingredients_attributes.values.each do |ingredients_attribute|
-      if !ingredients_attribute.empty?
+      if !ingredients_attribute.empty? &&
         new_ingredient = Ingredient.find_or_create_by(ingredients_attribute)
         self.ingredients << new_ingredient
       end
