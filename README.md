@@ -1,9 +1,14 @@
-# README
+# CookBook
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+CookBook is a Ruby on Rails application that allows you to store all of your favorite recipes.
 
-Things you may want to cover:
+
+# Installation
+To install this application use the following steps:
+  * Fork and clone this repository, and then execute:
+    $ bundle install
+
+    $ rake db:migrate
 
 * Ruby version
 
