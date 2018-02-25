@@ -1,0 +1,15 @@
+@import "bootstrap";
+
+body {
+  background-color: whitesmoke;
+  background-image: url('salad-2068220_1920.jpg')
+}
+
+.wrapper {
+    background: whitesmoke;
+
+    margin: 16px auto;
+    max-width: 960px;
+    padding: 2.5%; /* 18px / 800px */
+    width: 90%;
+  }
