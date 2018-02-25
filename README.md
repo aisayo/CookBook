@@ -1,6 +1,6 @@
 # CookBook
 
-CookBook is a Ruby on Rails application that allows you to store all of your favorite recipes.
+CookBook is a Ruby on Rails application that allows a user to store all of their favorite recipes. Once created a user can then edit a recipe, add an ingredient to the recipe, and view recipes that use a specific ingredient.
 
 
 # Installation
