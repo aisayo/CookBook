@@ -20,7 +20,9 @@ To install this application use the following steps:
   ```
     localhost:3000
   ```
-* Ruby version
+
+# License
+  * The application is available as open source under the terms of the MIT License.
 
 * System dependencies
 
@@ -30,10 +32,7 @@ To install this application use the following steps:
 
 * Database initialization
 
-* How to run the test suite
 
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
-
-* ...
