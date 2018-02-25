@@ -9,7 +9,16 @@ To install this application use the following steps:
   ```  
     $ bundle install
     $ rake db:migrate
-    
+
+  ```
+
+  * Then run:
+  ```
+    $ rails s
+  ```
+  * Open up a new browser window and navigate to:
+  ```
+    localhost:3000
   ```
 * Ruby version
 
