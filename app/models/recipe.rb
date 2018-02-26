@@ -11,6 +11,7 @@ class Recipe < ApplicationRecord
       self.order(name: :asc)
   end
 
+
   def ingredients_attributes=(ingredients_attributes)
     self.ingredients = []
     ingredients_attributes.values.each do |ingredients_attribute|

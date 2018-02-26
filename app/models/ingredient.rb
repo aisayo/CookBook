@@ -6,5 +6,6 @@ class Ingredient < ApplicationRecord
       self.order(name: :asc)
   end
 
+  
 
 end
